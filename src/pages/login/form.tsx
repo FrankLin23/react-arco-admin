@@ -37,12 +37,14 @@ export default function LoginForm() {
   }
 
   function login(params) {
+    console.log("params ", params);
     setErrorMessage("");
     setLoading(true);
     axios
       .post("/api/user/login", params)
       .then((res) => {
         const { status, msg } = res.data;
+        console.log(res.data);
         if (status === "ok") {
           afterLoginSuccess(params);
         } else {
@@ -80,10 +82,10 @@ export default function LoginForm() {
         className={styles["login-form"]}
         layout="vertical"
         ref={formRef}
-        initialValues={{ username: "admin", password: "admin" }}
+        initialValues={{ userName: "admin", password: "admin" }}
       >
         <Form.Item
-          field="username"
+          field="userName"
           rules={[{ required: true, message: t["login.form.userName.errMsg"] }]}
         >
           <Input

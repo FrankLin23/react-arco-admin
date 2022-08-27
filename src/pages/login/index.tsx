@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import styles from "./style/index.module.less";
 import LoginBanner from "@/pages/login/banner";
 import LoginForm from "@/pages/login/form";
 import Footer from "@/components/Footer";
+import Logo from "@/assets/logo.svg";
 
 function Login() {
   useEffect(() => {
@@ -12,6 +13,7 @@ function Login() {
   return (
     <div className={styles.container}>
       <div className={styles.logo}>
+        <img src={Logo} alt="logo" />
         <div className={styles["logo-text"]}>React Arco Admin</div>
       </div>
       <div className={styles.banner}>
